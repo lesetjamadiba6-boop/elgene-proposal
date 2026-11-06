@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fff8f4" />
+  <meta name="description" content="A little locked question for Elgene." />
+  <title>For Elgene ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="proposal-app" id="proposalApp">
+
+    <section class="scene scene-envelope is-active" id="sceneEnvelope" aria-labelledby="envelopeTitle">
+      <div class="paper-doodles" aria-hidden="true"><span>♡</span><span>✦</span><span>♡</span><span>✧</span></div>
+      <div class="envelope-wrap">
+        <div class="mini-label">PRIVATE • FOR ELGENE ONLY</div>
+        <button class="envelope" id="openEnvelope" type="button" aria-label="Open the envelope">
+          <span class="envelope-flap"></span>
+          <span class="envelope-body"></span>
+          <span class="wax-seal">E</span>
+        </button>
+        <h1 id="envelopeTitle">I have a question.<br><em>But you have to unlock it first.</em></h1>
+        <p class="lead">No dramatic speech yet. Just you, me, a tiny lockbox… and one thing I want to ask properly.</p>
+        <button class="primary-button" id="startButton" type="button">Open the envelope <span>→</span></button>
+        <div class="song-chip"><span>♪</span><div><strong>Ke Lorile</strong><small>Pleasure Tsa Manyalo</small></div></div>
+      </div>
+    </section>
+
+    <section class="scene" id="sceneCode" aria-labelledby="codeTitle">
+      <div class="scene-inner narrow">
+        <div class="step-row"><span>01</span><div class="step-line"><i style="width:25%"></i></div><b>THE LOCK</b></div>
+        <div class="lock-card">
+          <div class="lock-icon" aria-hidden="true"><span>♡</span></div>
+          <p class="kicker">FIRST, PROVE IT'S YOU 😭</p>
+          <h2 id="codeTitle">What day is yours?</h2>
+          <p class="muted">Enter your birthday as <strong>DDMM</strong>. You absolutely know this one.</p>
+          <form id="codeForm" novalidate>
+            <label class="sr-only" for="birthdayCode">Birthday code</label>
+            <input id="birthdayCode" name="birthdayCode" inputmode="numeric" autocomplete="off" maxlength="4" placeholder="••••" aria-describedby="codeHint codeError" />
+            <button class="primary-button" type="submit">Try the key</button>
+          </form>
+          <button class="hint-button" id="hintButton" type="button">Need a hint?</button>
+          <p class="hint-text" id="codeHint" hidden>Your birthday is 1 November → <strong>DDMM</strong>.</p>
+          <p class="error-text" id="codeError" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" id="sceneTruths" aria-labelledby="truthTitle">
+      <div class="scene-inner">
+        <div class="step-row"><span>02</span><div class="step-line"><i style="width:55%"></i></div><b>THREE KEYS</b></div>
+        <header class="scene-heading">
+          <p class="kicker">THREE LITTLE TRUTHS</p>
+          <h2 id="truthTitle">Open all three.<br><em>I mean every word.</em></h2>
+          <p class="muted">Each card gives you one key. Collect all three and the lockbox lets you continue.</p>
+        </header>
+
+        <div class="truth-layout">
+          <div class="photo-stack" aria-label="A few photos of us">
+            <figure class="photo-card photo-one"><img src="images/mirror.jpg" alt="Elgene and Lesetja in a mirror photo"><figcaption>us ♡</figcaption></figure>
+            <figure class="photo-card photo-two"><img src="images/playful.jpg" alt="A playful selfie collage"><figcaption>also us 😭</figcaption></figure>
+            <figure class="photo-card photo-three"><img src="images/closeup.jpg" alt="A close selfie together"><figcaption>still us.</figcaption></figure>
+          </div>
+
+          <div class="truth-cards" id="truthCards">
+            <button class="truth-card" type="button" data-key="0">
+              <span class="truth-number">01</span>
+              <span class="truth-front">Tap to open</span>
+              <span class="truth-back"><strong>I genuinely like you.</strong><small>Not only when things are romantic or dressed up. I like the playful you, the random you, the quiet you, and the version of you that is simply comfortable around me.</small></span>
+            </button>
+            <button class="truth-card" type="button" data-key="1">
+              <span class="truth-number">02</span>
+              <span class="truth-front">Tap to open</span>
+              <span class="truth-back"><strong>You make ordinary moments matter.</strong><small>Some of my favourite things are not big events. They are reflections, random pictures, sitting next to you, laughing at nonsense — normal moments that feel better because you are there.</small></span>
+            </button>
+            <button class="truth-card" type="button" data-key="2">
+              <span class="truth-number">03</span>
+              <span class="truth-front">Tap to open</span>
+              <span class="truth-back"><strong>I do not want to keep this vague.</strong><small>I care about you enough to be clear. I would rather ask properly than keep hiding behind “whatever this is” and hope you somehow know what I mean.</small></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="key-status" aria-live="polite">
+          <div><span class="key-dot"></span><span class="key-dot"></span><span class="key-dot"></span></div>
+          <p id="keyStatusText">0 of 3 keys collected</p>
+        </div>
+        <button class="primary-button continue-button" id="truthContinue" type="button" disabled>All three keys first ♡</button>
+      </div>
+    </section>
+
+    <section class="scene" id="sceneHold" aria-labelledby="holdTitle">
+      <div class="scene-inner narrow center">
+        <div class="step-row"><span>03</span><div class="step-line"><i style="width:82%"></i></div><b>LAST LOCK</b></div>
+        <p class="kicker">ONE LAST THING</p>
+        <h2 id="holdTitle">No accidental clicks.<br><em>Hold the heart to unlock it.</em></h2>
+        <p class="muted">Hold it until the ring completes. If you let go, it starts again. Dramatic? A little.</p>
+        <button class="hold-heart" id="holdHeart" type="button" aria-label="Press and hold to unlock the question">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+            <circle class="ring-progress" id="ringProgress" cx="60" cy="60" r="52"></circle>
+          </svg>
+          <span>♥</span>
+        </button>
+        <p class="hold-label" id="holdLabel" aria-live="polite">press & hold</p>
+      </div>
+    </section>
+
+    <section class="scene scene-question" id="sceneQuestion" aria-labelledby="questionTitle">
+      <div class="question-photo" aria-hidden="true"><img src="images/reflection.jpg" alt=""></div>
+      <div class="question-panel">
+        <p class="kicker light">OKAY. THIS IS THE QUESTION.</p>
+        <h2 id="questionTitle">Elgene Jamelia Januarie,<br><em>will you be my girlfriend?</em></h2>
+        <p>I am not asking because I made a cute website. I made the website because I wanted to ask you in a way that felt intentional. I like you. I care about you. And I would like us to be something we choose properly.</p>
+
+        <div class="answer-buttons" id="answerButtons">
+          <button class="answer answer-yes" type="button" data-answer="Yes — I'd love to 🤎">Yes — I'd love to 🤎</button>
+          <button class="answer answer-time" type="button" data-answer="I need a little time">I need a little time</button>
+          <button class="answer answer-no" type="button" data-answer="Not right now">Not right now</button>
+        </div>
+        <p class="answer-fineprint">Whatever you choose, I want the answer to be yours.</p>
+        <div class="answer-result" id="answerResult" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="scene scene-ending" id="sceneEnding" aria-labelledby="endingTitle">
+      <div class="scene-inner narrow center">
+        <div class="ending-mark">♡</div>
+        <p class="kicker" id="endingKicker">ANSWER RECEIVED</p>
+        <h2 id="endingTitle">Thank you for answering me honestly.</h2>
+        <p class="ending-copy" id="endingCopy"></p>
+        <button class="secondary-button" id="replayButton" type="button">Replay the little lockbox</button>
+      </div>
+    </section>
+
+    <div class="music-control" id="musicControl" hidden>
+      <button id="musicToggle" type="button" aria-label="Play or pause Ke Lorile">❚❚</button>
+      <div><strong>Ke Lorile</strong><span id="musicStatus">playing softly</span></div>
+    </div>
+
+    <audio id="song" loop preload="metadata">
+      <source src="music/ke-lorile.mp3" type="audio/mpeg" />
+    </audio>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
